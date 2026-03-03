@@ -1,59 +1,76 @@
 <div align="center">
-  <h1>👋 Welcome to My GitHub Space</h1>
-  <p>Code • Create • Explore • Play</p>
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&width=600&lines=Full+Stack+Developer;Open+Source+Lover;Always+Learning+New+Things" />
-
-</div>
----
-
-### 🚀 About Me
-- 🌱 Currently learning advanced algorithms & cloud native
-- 💻 Focus on web development & automation
-- ⚡ Love clean code & fun side projects
-- 📫 Reach me via GitHub Discussions
-
----
-<div align="center">
-
----
-
-# 🎮 Wordle Game (Play Here!)
-Guess the 5-letter word in 6 tries.  
-Each guess must be a valid 5-letter word.  
-
-<pre align="center">
-🟩🟨⬜ Rules:
-🟩 = Correct letter & position
-🟨 = Correct letter, wrong position
-⬜ = Letter not in word
-</pre>
-
-<div align="center">
-<a href="https://wordle-online.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/Play%20Wordle-%23121212?style=for-the-badge&logo=gamepad&logoColor=white" alt="Play Wordle">
-</a>
-</div>
-
-### 🛠 Tech Stack
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Vue](https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
-
----
-
-### 📊 GitHub Stats
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Aquino6657&show_icons=true&theme=github_dark&hide_border=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aquino6657&layout=compact&theme=github_dark&hide_border=true" />
+  <h1>Welcome to My Space ✨</h1>
+  <p>Code • Anime • Games • Fun</p>
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=20&pause=1000&color=ffacc8&width=550&lines=Kawaii+Code+Lover;Anime+Fan;Wordle+Gamer+🌸;Always+learning+new+things">
 </div>
 
 ---
 
+# 🌸 Kawaii Wordle — 可愛い単語ゲーム
+<p align="center">
+  <b>6 次机会猜出 5 个字母的单词</b><br>
+  🟩 正解の文字・位置<br>
+  🟨 文字は正しいが位置が違う<br>
+  ⬜ この文字は含まれていない<br>
+</p>
+
 <div align="center">
-  <i>Thanks for stopping by! Feel free to play & fork anything you like.</i>
+<details>
+<summary>💖 クリックしてゲームをスタート</summary>
+
+```html
+<!-- 二次元 Wordle 纯本地运行 -->
+<div style="background:#fff0f5; padding:20px; border-radius:16px; max-width:320px; margin:10px auto; border:3px solid #ffc0d0;">
+  <div id="game" style="font-family: 'Segoe UI', sans-serif; text-align:center;">
+    <div id="board" style="display: grid; grid-template-columns: repeat(5, 50px); gap:6px; justify-content:center; margin:10px 0;"></div>
+    <input id="input" maxlength="5" placeholder="5文字 入力" style="width:160px; padding:8px; border-radius:8px; border:2px solid #ffc0cb; text-align:center; margin-top:10px;">
+    <button onclick="guess()" style="background:#ffacc8; color:white; border:none; padding:8px 16px; border-radius:8px; margin-left:6px;">決定</button>
+  </div>
+
+  <script>
+    const words = ["apple","bread","cream","dream","fruit","grape","honey","lemon","mango","peach","pine","sugar","sweet","water"];
+    let answer = words[Math.floor(Math.random()*words.length)];
+    let row = 0;
+    const board = document.getElementById("board");
+    const input = document.getElementById("input");
+
+    function renderBoard(){
+      board.innerHTML = "";
+      for(let i=0;i<6;i++){
+        for(let j=0;j<5;j++){
+          const cell = document.createElement("div");
+          cell.style.width = "50px";
+          cell.style.height = "50px";
+          cell.style.border = "2px solid #ffc0d0";
+          cell.style.borderRadius = "10px";
+          cell.style.display = "flex";
+          cell.style.alignItems = "center";
+          cell.style.justifyContent = "center";
+          cell.style.fontSize = "22px";
+          cell.style.fontWeight = "bold";
+          cell.id = `c${i}-${j}`;
+          board.appendChild(cell);
+        }
+      }
+    }
+
+    function guess(){
+      let w = input.value.toLowerCase().trim();
+      if(w.length!=5) return;
+      for(let i=0;i<5;i++){
+        const c = document.getElementById(`c${row}-${i}`);
+        c.innerText = w[i];
+        if(w[i]==answer[i]) c.style.background="#b2f2bb";
+        else if(answer.includes(w[i])) c.style.background="#fff3bf";
+        else c.style.background="#e9ecef";
+        c.style.color="#222";
+        c.style.border="none";
+      }
+      row++;
+      input.value="";
+      if(w==answer) alert("🎉 おめでとう！正解です！");
+      else if(row>=6) alert("💧 残念… 正解は "+answer+" でした");
+    }
+    renderBoard();
+  </script>
 </div>
