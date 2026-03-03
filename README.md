@@ -3,7 +3,7 @@
   <p>Code • Create • Explore • Play</p>
   <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&width=600&lines=Full+Stack+Developer;Open+Source+Lover;Always+Learning+New+Things" />
 
-
+</div>
 ---
 
 ### 🚀 About Me
@@ -13,7 +13,7 @@
 - 📫 Reach me via GitHub Discussions
 
 ---
-</div>
+<div align="center">
 
 ---
 
