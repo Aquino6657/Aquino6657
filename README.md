@@ -30,13 +30,7 @@
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
 
----
 
-### 📊 GitHub Stats
-<div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?user=Aquino6657&show_icons=true&theme=dracula&hide_border=true" alt="GitHub Stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?user=Aquino6657&layout=compact&theme=dracula&hide_border=true" alt="Top Languages" />
-</div>
 
 ---
 
@@ -50,4 +44,12 @@
 ### 💡 Quote
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Quote" />
+</div>
+
+---
+
+### 📊 GitHub Stats
+<div align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?user=Aquino6657&show_icons=true&theme=dracula&hide_border=true" alt="GitHub Stats" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?user=Aquino6657&layout=compact&theme=dracula&hide_border=true" alt="Top Languages" />
 </div>
